@@ -146,6 +146,18 @@ gambar/teks, serta TUI tetap berjalan.
 
 ## Instalasi
 
+### Unduh binary rilis
+
+Rilis siap pakai untuk Linux x86_64 tersedia di
+[halaman Releases](https://github.com/Panz-08/sorcerer/releases/latest):
+
+```bash
+tar -xzf sorce-v0.1.0-linux-x86_64.tar.gz
+sudo install -m 755 sorce /usr/local/bin/sorce
+```
+
+Cek checksum dengan `sha256sum -c SHA256SUMS` sebelum dipasang.
+
 ### Dari source (disarankan saat pengembangan)
 
 ```bash
