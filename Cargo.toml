@@ -1,0 +1,70 @@
+[package]
+name = "sorcerer"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "Sorcerer — an all-in-one file & document converter for the terminal, crafted by Panz-08"
+authors = ["Panz-08"]
+license = "MIT"
+repository = "https://github.com/Panz-08/sorcerer"
+keywords = ["converter", "image", "pdf", "tui", "cli"]
+categories = ["command-line-utilities", "multimedia::images"]
+readme = "README.md"
+
+[[bin]]
+name = "sorce"
+path = "src/main.rs"
+
+[lib]
+name = "sorcerer"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1.0"
+thiserror = "2.0"
+clap = { version = "4.5", features = ["derive", "wrap_help"] }
+clap_complete = "4.5"
+ratatui = "0.29"
+crossterm = "0.28"
+image = { version = "0.25", default-features = false, features = [
+    "rayon",
+    "jpeg",
+    "png",
+    "gif",
+    "webp",
+    "bmp",
+    "tiff",
+    "ico",
+    "pnm",
+    "tga",
+    "qoi",
+    "hdr",
+    "exr",
+    "ff",
+    "dds",
+    "avif",
+] }
+resvg = "0.50"
+usvg = "0.50"
+tiny-skia = "0.12"
+flate2 = "1.0"
+rayon = "1.10"
+indicatif = "0.17"
+glob = "0.3"
+walkdir = "2.5"
+tempfile = "3.14"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+dirs = "6.0"
+unicode-width = "0.2"
+num_cpus = "1.16"
+pulldown-cmark = "0.13"
+
+[dev-dependencies]
+assert_cmd = "2.0"
+predicates = "3.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
